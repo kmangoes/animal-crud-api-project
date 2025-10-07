@@ -5,7 +5,7 @@ Animal CRUD API for CSC-340.
 - Get the project
     - clone
         ```
-      git clone https://github.com/kmangoes/animal-crud-api.git
+      git clone https://github.com/kmangoes/animal-crud-api-project.git
         ```
     - OR download zip
  - This project is build to run on JDK 21
