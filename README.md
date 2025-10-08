@@ -160,9 +160,9 @@ Updates an existing animal entry.
 ```
 
 #### 7. /{animalId} **(DELETE)**
-Deletes an existing animal entry.
-**Parameters:** Path variable, **Long** animalId
-**Response: Updated body of entries**
+Deletes an existing animal entry.  
+**Parameters:** Path variable, **Long** animalId  
+**Response: Updated body of entries**  
 ```
 [
   {
