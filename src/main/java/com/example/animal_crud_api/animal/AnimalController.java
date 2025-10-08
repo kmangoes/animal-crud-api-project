@@ -48,8 +48,7 @@ public Object addAnimal(@RequestBody Animal animal) {
 
 @PutMapping("/animals/{animalId}")
 public Animal updateAnimal(@PathVariable Long animalId, @RequestBody Animal animal) {
-    animalService.updateAnimal(animalId, animal);
-    return animalService.getAnimalById(animalId);
+    return animalService.updateAnimal(animalId, animal);
 }
 
 @DeleteMapping("/animals/{animalId}")
