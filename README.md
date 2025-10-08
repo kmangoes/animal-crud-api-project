@@ -1,5 +1,10 @@
 # animal-crud-api-project
-Animal CRUD API for CSC-340.
+Animal CRUD API for CSC-340.  
+
+## Video Demo  
+```
+
+```
 
 ## Installation  
 - Get the project
