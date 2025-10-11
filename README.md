@@ -3,7 +3,7 @@ Animal CRUD API for CSC-340.
 
 ## Video Demo  
 ```
-
+[Animal CRUD API Demo Video](https://youtu.be/3ei1aILFtCY)
 ```
 
 ## Installation  
