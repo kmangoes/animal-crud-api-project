@@ -23,24 +23,28 @@ public class Animal {
 
     @Column(nullable = false)
     private String classification;
+    
+    private String animalPicturePath;
 
     public Animal() {
     } //empty constructor for JPA
 
     //constructor with all fields
-    public Animal(Long animalId, String name, String description, double age, String classification) {
+    public Animal(Long animalId, String name, String description, double age, String classification, String animalPicturePath) {
         this.animalId = animalId;
         this.name = name;
         this.description = description;
         this.age = age;
         this.classification = classification;
+        this.animalPicturePath = animalPicturePath;
     }
     //constructor without id
-    public Animal(String name, String description, double age, String classification) {
+    public Animal(String name, String description, double age, String classification, String animalPicturePath) {
         this.name = name;
         this.description = description;
         this.age = age;
         this.classification = classification;
+        this.animalPicturePath = animalPicturePath;
     }
 
     //getters and setters
@@ -73,6 +77,12 @@ public class Animal {
     }
     public void setClassification(String classification) {
         this.classification = classification;
+    }
+    public String getAnimalPicturePath() {
+        return animalPicturePath;
+    }
+    public void setAnimalPicturePath(String animalPicturePath) {
+        this.animalPicturePath = animalPicturePath;
     }
 
 }

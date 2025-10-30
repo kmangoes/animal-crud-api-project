@@ -12,9 +12,8 @@
         <li><a href="new-animal-form.html">Animal Form</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="details.html">Benny!</a></li>
-
     </ul>
-
+    
     <div class = "form">
     <h2>Add a New Animal!</h2>
     <h4>Name</h4>
