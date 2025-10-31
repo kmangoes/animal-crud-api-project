@@ -3,10 +3,12 @@ package com.example.animal_crud_api.animal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.ui.Model;
 
@@ -22,15 +24,14 @@ public Object getAllAnimals(Model model) {
     //return animalService.getAllAnimals();
     model.addAttribute("animalsList", animalService.getAllAnimals());
     model.addAttribute("title", "All Animals");
-    return "index"; //ftlh view name 
+    return "animal-list"; //ftlh view name 
 }
 
 @GetMapping("/animals/{animalId}")
 public String getAnimalById(@PathVariable Long animalId, Model model) {
-    //return animalService.getAnimalById(animalId);
-    model.addAttribute("animal", animalService.getAnimalById(animalId));
-    model.addAttribute("title", "animal #: " + animalId);
-    return "details";
+    Animal animal = animalService.getAnimalById(animalId);
+    model.addAttribute("animal", animal);
+    return "animal-details";
 }
 
 @GetMapping("/animals/classification/{classification}")
@@ -59,11 +60,12 @@ public Object showCreateForm(Model model) {
     Animal animal = new Animal();
     model.addAttribute("animal", animal);
     model.addAttribute("title", "Add new animal");
-    return "new-animal-form";
+    return "animal-create";
 }
 @PostMapping("/animals")
-public Object addAnimal(Animal animal, @RequestParam MultipartFile animalPicture) {
-    Animal newAnimal = animalService.addAnimal(animal, animalPicture);
+public Object addAnimal(
+        @ModelAttribute Animal animal) {
+    Animal newAnimal = animalService.addAnimal(animal);
     return "redirect:/animals/" + newAnimal.getAnimalId();
 }
 @GetMapping("/animals/updateForm/{animalId}")
@@ -74,8 +76,8 @@ public Object showUpdateForm(@PathVariable Long animalId, Model model) {
     return "animal-update";
 }
 @PostMapping("/animals/update/{animalId}")
-public Object updateAnimal(@PathVariable Long animalId, @RequestBody MultipartFile animalPicture, Animal animal) {
-    animalService.updateAnimal(animalId, animal, animalPicture);
+public Object updateAnimal(@PathVariable Long animalId, Animal animal) {
+    animalService.updateAnimal(animalId, animal);
     return "redirect:/animals/" + animalId;
 }
 @GetMapping("/animals/delete/{animalId}")

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/index-styles.css">
+        <link rel="stylesheet" href="../css/animal-list-styles.css">
         <meta name ="description" content="This is a static web app for CSC340">
         <meta charset="utf-8">
         <title>Static Web App</title>
     </head>
 <body>
     <ul class = "navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="new-animal-form.html">Animal Form</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="details.html">Benny!</a></li>
+        <li><a href="animal-list.ftlh">Home</a></li>
+        <li><a href="animal-create.ftlh">New Animal Form</a></li>
+        <li><a href="animal-update.ftlh">Update Form</a></li>
+        <li><a href="animal-details.ftlh">Details</a></li>
     </ul>
     <h1>Welcome to the Animal Gallery!</h1>
     <h4>A collection of cute animals <br><br></h4>

@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/details-styles.css"> 
+        <link rel="stylesheet" href="../css/animal-details-styles.css"> 
         <meta name ="description" content="This is the details page for the Static Web App">
         <meta charset="utf-8">
         <title>Details Page</title>
     </head>
     <body>
     <ul class = "navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="new-animal-form.html">Animal Form</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="details.html">Benny!</a></li>
-
+        <li><a href="animal-list.ftlh">Home</a></li>
+        <li><a href="animal-create.ftlh">New Animal Form</a></li>
+        <li><a href="animal-update.ftlh">Update Form</a></li>
+        <li><a href="animal-details.ftlh">Details</a></li>
     </ul>
-    <h1>Benny the Chihuahua!</h1>
-    <div class="benny_text_box">
-        <img src="img/benny.jpg" alt="Benny the Chihuahua" width="600" height="400">
+    <h1>${animal.name}</h1>
+    <div class="animal-text-box">
+        <img src="../img/benny.jpg" alt="Benny the Chihuahua" width="600" height="400">
         <h2> Description </h2>
-        <p> Benny is my 3 year-old Chihuahua that my family adopted when I was in high school. He is an extremely sweet little guy (even though he sometimes forgets where he's supposed to pee), disproving stereotypes and breaking down barriers for chihuahuas everywhere!</p>
-        <ul class ="benny_facts">
-            <li>Date of Birth: September, 2022</li>
-            <li>Breed: Chihuahua</li>
-            <li>Height: Like 1/2 Ft</li>
-            <li>Weight: 3 lbs</li>
+        <p> ${animal.description}</p>
+        <ul class ="animal-facts">
+            <li>Age: ${animal.age}</li>
+            <li>Breed: ${animal.classification}</li>
         </ul>
     </div>
     </body>

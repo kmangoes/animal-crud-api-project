@@ -8,10 +8,10 @@
     </head>
 <body>
     <ul class = "navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="new-animal-form.html">Animal Form</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="details.html">Benny!</a></li>
+        <li><a href="animal-list.ftlh">Home</a></li>
+        <li><a href="animal-create.ftlh">New Animal Form</a></li>
+        <li><a href="animal-update.ftlh">Update Form</a></li>
+        <li><a href="animal-details.ftlh">Details</a></li>
     </ul>
     
     <div class = "form">
