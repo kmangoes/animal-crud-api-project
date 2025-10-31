@@ -3,16 +3,15 @@ package com.example.animal_crud_api.animal;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+/*
+ * Because Animal entity class has the classification and name fields already, we can simply declare the appropriate findBy methods w/o the Query annotation
+ */
 @Repository
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
-
-    @Query("SELECT a FROM Animal a WHERE a.classification = ?1")
-    List<Animal> getAnimalByClassification(String classification);
-
-    @Query("SELECT a FROM Animal a WHERE a.name LIKE %?1%")
-    List<Animal> getAnimalsByName(String name);
     
+    List<Animal> findByClassification(String classification);
+
+    List<Animal> findByName(String name);
 }

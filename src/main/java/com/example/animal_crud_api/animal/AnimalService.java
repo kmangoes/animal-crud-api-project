@@ -29,11 +29,11 @@ public Animal getAnimalById(@PathVariable Long animalId) {
 }
 
 public Object getAnimalByClassification (String classification) {
-    return animalRepository.getAnimalByClassification(classification);
+    return animalRepository.findByClassification(classification);
 }
 
 public Object getAnimalsByName (String name) {
-    return animalRepository.getAnimalsByName(name);
+    return animalRepository.findByName(name);
 }
 
 public Animal addAnimal(Animal animal, MultipartFile animalPicture) {

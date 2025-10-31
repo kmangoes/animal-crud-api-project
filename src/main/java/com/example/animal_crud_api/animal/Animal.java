@@ -10,6 +10,8 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "animals")
 public class Animal {
+
+    // ALL animal features; all non-nullable, all animal rows should have all rows filled 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long animalId;
@@ -18,13 +20,13 @@ public class Animal {
     private String name;
     @Column(nullable = false)
     private String description;
-
-    private double age;
-
     @Column(nullable = false)
     private String classification;
-    
+    @Column(nullable=false)
+    private double age;
+    @Column(nullable=false)
     private String animalPicturePath;
+
 
     public Animal() {
     } //empty constructor for JPA
