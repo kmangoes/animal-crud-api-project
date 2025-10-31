@@ -3,7 +3,7 @@
     <head>
         <meta name ="about" content="This is a page for extra content of the webpage">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/animal-update-styles.css">
+        <link rel="stylesheet" href="/css/animal-update-styles.css">
         <title>About Page</title>
     </head>
 <body>

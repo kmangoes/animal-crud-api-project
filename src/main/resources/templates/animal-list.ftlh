@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/animal-list-styles.css">
+        <link rel="stylesheet" href="/css/animal-list-styles.css">
         <meta name ="description" content="This is a static web app for CSC340">
         <meta charset="utf-8">
         <title>Static Web App</title>
