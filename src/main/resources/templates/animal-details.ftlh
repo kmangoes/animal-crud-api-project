@@ -7,12 +7,12 @@
         <title>Details Page</title>
     </head>
     <body>
+<!--Start Nav Bar-->
     <ul class = "navbar">
-        <li><a href="/animals">Home</a></li>
-        <li><a href="/animals/createForm">New Animal Form</a></li>
-        <li><a href="/animals/updateForm/${animal.animalId}">Update Form</a></li> <!--both this link and details link in navbar will be abstracted to other places; will not be in navbar in final ver.-->
-        <li><a href="/animals/${animal.animalId}">Details</a></li> <!--the details LINK in navbar will be replaced by hyperlinks on each animal's card in animal-list page-->
+        <li><a href="/animals/">Home</a></li>
+        <li><a href="/animals/createForm/">New Animal Form</a></li>
     </ul>
+<!--End Nav Bar-->
     <h1>${animal.name}</h1>
     <div class="animal-text-box">
         <img src="${animal.animalPicturePath}" alt="${animal.name}" width="600" height="400">

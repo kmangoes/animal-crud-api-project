@@ -7,12 +7,12 @@
         <title>About Page</title>
     </head>
 <body>
+<!--Start Nav Bar-->
     <ul class = "navbar">
-        <li><a href="animal-list.ftlh">Home</a></li>
-        <li><a href="animal-create.ftlh">New Animal Form</a></li>
-        <li><a href="animal-update.ftlh">Update Form</a></li>
-        <li><a href="animal-details.ftlh">Details</a></li>
+        <li><a href="/animals/">Home</a></li>
+        <li><a href="/animals/createForm/">New Animal Form</a></li>
     </ul>
+<!--End Nav Bar-->
     <div class = "form">
         <h2>Update Animal Form</h2>
         <h4>Name</h4>
