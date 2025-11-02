@@ -7,14 +7,14 @@
         <title>MVC Web App</title>
     </head>
 <body>
-<!--Start Nav Bar-->
     <ul class = "navbar">
-        <li><a href="/animals/">Home</a></li>
-        <li><a href="/animals/createForm/">New Animal Form</a></li>
+        <li><a href="animal-list.ftlh">Home</a></li>
+        <li><a href="animal-create.ftlh">New Animal Form</a></li>
+        <li><a href="animal-update.ftlh">Update Form</a></li>
     </ul>
     <h1>Welcome to the Animal Gallery!</h1>
     <h4>A collection of cute animals <br><br></h4>
-<!--End Nav Bar-->
+
 <div class="search-bar-container">
     <!-- Search by name -->
     <form onsubmit="event.preventDefault(); window.location='/animals/name/' + this.nameKey.value;">
@@ -31,7 +31,7 @@
 <br><br>
 <!--Animals Cards-->
 
-    <#list animalsList as animal> <!--loop through all animal rows in database-->
+    <#list animalsList as animals> <!--loop through all animal rows in database-->
     <div class="animal-card">
         <p><strong>Name:</strong> ${animal.name}</p>
         <p><strong>Age:</strong> ${animal.age}</p>
@@ -42,6 +42,7 @@
             <button onclick="window.location.href='/animals/updateForm/${animal.animalId}'">Update</button>
             <button onclick="window.location.href='/animals/delete/${animal.animalId}'">Delete</button>
         </div>
+
     </div>
     </#list> <!--end of loop-->
 

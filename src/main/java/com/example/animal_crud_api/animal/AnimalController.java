@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.ui.Model;
 
 
@@ -72,7 +69,7 @@ public Object addAnimal(
 public Object showUpdateForm(@PathVariable Long animalId, Model model) {
     Animal animal = animalService.getAnimalById(animalId);
     model.addAttribute("animal", animal);
-    model.addAttribute("animal", "Update Animal: " + animalId);
+    model.addAttribute("title", "Update Animal: " + animalId);
     return "animal-update";
 }
 @PostMapping("/animals/update/{animalId}")
@@ -85,5 +82,4 @@ public Object deleteAnimal(@PathVariable Long animalId) {
     animalService.deleteAnimal(animalId);
     return "redirect:/animals";
 }
-
 }
