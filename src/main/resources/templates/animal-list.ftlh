@@ -11,7 +11,7 @@
 <!--Start Nav Bar-->
     <ul class = "navbar">
         <li><a href="/animals/">Home</a></li>
-        <li><a href="/animals/createForm/">New Animal Form</a></li>
+        <li><a href="/animals/createForm">New Animal Form</a></li>
     </ul>
     <h1>Welcome to the Animal Gallery!</h1>
     <h4>A collection of cute animals <br><br></h4>

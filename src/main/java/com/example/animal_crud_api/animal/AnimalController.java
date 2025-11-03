@@ -3,7 +3,6 @@ package com.example.animal_crud_api.animal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,12 +53,13 @@ public Object getAnimalsByName(@RequestParam String key, Model model) {
 }
 @GetMapping("/animals/createForm") 
 public Object showCreateForm(Model model) {
-    Animal animal = new Animal();
-    model.addAttribute("animal", animal);
+    System.out.println("Create form called :D"); //sanity check message in terminal
+    model.addAttribute("animal", new Animal());
     model.addAttribute("title", "Add a new animal!");
+    System.out.println("Rendering template: animal-create.ftlh");
     return "animal-create"; //directs to animal-create.ftlh
 }
-@PostMapping("/animals")
+@PostMapping({"/animals","/animals/"})
 public Object addAnimal(Animal animal) {
     Animal savedAnimal = animalService.addAnimal(animal);
     return "redirect:/animals/" + savedAnimal.getAnimalId();

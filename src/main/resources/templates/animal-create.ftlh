@@ -10,29 +10,27 @@
 <!--Start Nav Bar-->
     <ul class = "navbar">
         <li><a href="/animals/">Home</a></li>
-        <li><a href="/animals/createForm/">New Animal Form</a></li>
+        <li><a href="/animals/createForm">New Animal Form</a></li>
     </ul>
 <!--End Nav Bar-->
-    
 <!--Start Create Form-->
-<form action="/animals" method="post">
     <div class = "form">
+    <form action="/animals" method="post">
     <h2>${title}</h2>
     <h4>Name</h4>
-    <input type="text" id="name" name="name" placeholder="Enter animal name">
+    <input type="text" id="name" name="name" placeholder="Enter animal name" value="${(animal.name)!''}">
     <h4>Classification</h4>
-    <input type="text" id="classification" name="classification" placeholder="Enter animal breed">
+    <input type="text" id="classification" name="classification" placeholder="Enter animal breed" value="${(animal.classification)!''}">
     <h4>Age</h4>
-    <input type="number" id="age" name="age">
+    <input type="number" id="age" name="age" value="${(animal.age)!''}">
     <h4>Image URL</h4>
-    <input type="text" id="image" name="image" placeholder="Enter image URL">
+    <input type="text" id="image" name="image" placeholder="Enter image URL" value="${(animal.animalPicturePath)!''}">
     <h4>Description</h4>
-    <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter a description..."></textarea>
+    <input type="text" id="description" name="description" rows="4" cols="50" placeholder="Enter a description..." value="${(animal.description)!''}"></textarea>
     <br><br>
     <input type="submit" value="Send">
+    </form>
     </div>
-</form>
 <!--End Create Form-->
-
 </body>
 </html>
