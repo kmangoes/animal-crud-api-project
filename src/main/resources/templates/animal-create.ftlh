@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/css/animal-form-styles.css">
+        <link rel="stylesheet" href="/css/animal-create-styles.css">
         <meta name ="description" content="This is the webpage for submitting a new animal">
         <meta charset="utf-8">
         <title>'New Animal' Form</title>
@@ -14,8 +14,10 @@
     </ul>
 <!--End Nav Bar-->
     
+<!--Start Create Form-->
+<form action="/animals" method="post">
     <div class = "form">
-    <h2>Add a New Animal!</h2>
+    <h2>${title}</h2>
     <h4>Name</h4>
     <input type="text" id="name" name="name" placeholder="Enter animal name">
     <h4>Classification</h4>
@@ -29,6 +31,8 @@
     <br><br>
     <input type="submit" value="Send">
     </div>
+</form>
+<!--End Create Form-->
 
 </body>
 </html>

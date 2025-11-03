@@ -56,30 +56,35 @@ public Object getAnimalsByName(@RequestParam String key, Model model) {
 public Object showCreateForm(Model model) {
     Animal animal = new Animal();
     model.addAttribute("animal", animal);
-    model.addAttribute("title", "Add new animal");
-    return "animal-create";
+    model.addAttribute("title", "Add a new animal!");
+    return "animal-create"; //directs to animal-create.ftlh
 }
 @PostMapping("/animals")
-public Object addAnimal(
-        @ModelAttribute Animal animal) {
-    Animal newAnimal = animalService.addAnimal(animal);
-    return "redirect:/animals/" + newAnimal.getAnimalId();
+public Object addAnimal(Animal animal) {
+    Animal savedAnimal = animalService.addAnimal(animal);
+    return "redirect:/animals/" + savedAnimal.getAnimalId();
 }
+
+
+
+
 @GetMapping("/animals/updateForm/{animalId}")
 public Object showUpdateForm(@PathVariable Long animalId, Model model) {
     Animal animal = animalService.getAnimalById(animalId);
     model.addAttribute("animal", animal);
     model.addAttribute("title", "Update Animal: " + animalId);
-    return "animal-update";
+    return "animal-update"; //directs to animal-upate.ftlh
 }
 @PostMapping("/animals/update/{animalId}")
 public Object updateAnimal(@PathVariable Long animalId, Animal animal) {
     animalService.updateAnimal(animalId, animal);
-    return "redirect:/animals/" + animalId;
+    return "redirect:/animals/" + animalId; //redirects to details page of that animal
 }
+
+
 @GetMapping("/animals/delete/{animalId}")
 public Object deleteAnimal(@PathVariable Long animalId) {
     animalService.deleteAnimal(animalId);
-    return "redirect:/animals";
+    return "redirect:/animals"; //reloads animal-list.ftlh page 
 }
 }
