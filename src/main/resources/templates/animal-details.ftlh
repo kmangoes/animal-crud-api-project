@@ -23,6 +23,7 @@
         <ul class ="animal-facts">
             <li>Age: ${animal.age}</li>
             <li>Breed: ${animal.classification}</li>
+            <li>ID: ${animal.animalId}</li>
         </ul>
     </div>
     </body>
