@@ -22,14 +22,12 @@ public Object getAllAnimals(Model model) {
     model.addAttribute("title", "All Animals");
     return "animal-list"; //ftlh view name 
 }
-
 @GetMapping("/animals/{animalId}")
 public String getAnimalById(@PathVariable Long animalId, Model model) {
     Animal animal = animalService.getAnimalById(animalId);
     model.addAttribute("animal", animal);
     return "animal-details";
 }
-
 @GetMapping("/animals/classification/{classification}")
 public Object getAnimalByClassification(@PathVariable String classification, Model model) {
     if (classification != null) {
@@ -40,7 +38,6 @@ public Object getAnimalByClassification(@PathVariable String classification, Mod
         return "redirect:/animals/";
     }
 }
-
 @GetMapping("/animals/name")
 public Object getAnimalsByName(@RequestParam String key, Model model) {
     if (key != null) {
@@ -51,16 +48,11 @@ public Object getAnimalsByName(@RequestParam String key, Model model) {
         return "redirect:/animals/";
     }
 }
-
-
-
-
 @GetMapping("/animals/createForm") 
 public Object showCreateForm(Model model) {
     System.out.println("Create form called :D"); //sanity check message in terminal
     model.addAttribute("animal", new Animal());
     model.addAttribute("title", "Add a new animal!");
-    System.out.println("Rendering template: animal-create.ftlh");
     return "animal-create"; //directs to animal-create.ftlh
 }
 @PostMapping("/animals")
@@ -69,24 +61,18 @@ public Object addAnimal(Animal animal) {
     System.out.println("Animal received: " + savedAnimal); //sanity check message in terminal 
     return "redirect:/animals/";
 }
-
-
-
-
 @GetMapping("/animals/updateForm/{animalId}")
 public Object showUpdateForm(@PathVariable Long animalId, Model model) {
     Animal animal = animalService.getAnimalById(animalId);
     model.addAttribute("animal", animal);
-    model.addAttribute("title", "Update Animal: " + animalId);
+    model.addAttribute("title", "Update Animal");
     return "animal-update"; //directs to animal-upate.ftlh
 }
 @PostMapping("/animals/update/{animalId}")
 public Object updateAnimal(@PathVariable Long animalId, Animal animal) {
     animalService.updateAnimal(animalId, animal);
-    return "redirect:/animals/" + animalId; //redirects to details page of that animal
+    return "redirect:/animals/" + animalId; //redirects to details page
 }
-
-
 @GetMapping("/animals/delete/{animalId}")
 public Object deleteAnimal(@PathVariable Long animalId) {
     animalService.deleteAnimal(animalId);

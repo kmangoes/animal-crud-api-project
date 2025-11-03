@@ -30,8 +30,7 @@
     </form>
 </div>
 <br><br>
-<!--Animals Cards-->
-
+<!--Start Animals Cards-->
     <#list animalsList as animal> <!--loop through all animal rows in database-->
     <div class="animal-card">
         <p><strong>Name:</strong> ${animal.name}</p>
@@ -45,6 +44,6 @@
         </div>
     </div>
     </#list> <!--end of loop-->
-
+<!--End Animals Cards-->
 </body>
 </html>

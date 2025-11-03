@@ -7,24 +7,30 @@
         <title>About Page</title>
     </head>
 <body>
+<!--Start Nav Bar-->
     <ul class = "navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="new-animal-form.html">Animal Form</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="details.html">Benny!</a></li>
+        <li><a href="/animals/">Home</a></li>
+        <li><a href="/animals/createForm">New Animal Form</a></li>
     </ul>
+<!--End Nav Bar-->
+<!--Start Update Form-->
     <div class = "form">
-        <h2>Update Animal Form</h2>
-        <h4>Name</h4>
-        <input type="text" id="name" name="name" placeholder="Name of animal">
-        <h4>Age</h4>
-        <input type="number" id="age" name="age" placeholder="Enter animal age">
-        <h4>Classification</h4>
-        <input type="text" id="classification" name="classification" placeholder="Enter classification of animal">
-        <h4>Description</h4>      
-        <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter a description..."></textarea>
-        <br><br>
-        <input type="submit" value="Send">
+    <form action="/animals/update/${animal.animalId}" method="post">
+    <h2>${title}</h2>
+    <h4>Name</h4>
+    <input type="text" id="name" name="name" placeholder="Enter animal name" value="${(animal.name)!''}">
+    <h4>Classification</h4>
+    <input type="text" id="classification" name="classification" placeholder="Enter animal breed" value="${(animal.classification)!''}">
+    <h4>Age</h4>
+    <input type="number" id="age" name="age" value="${(animal.age)!''}">
+    <h4>Image URL</h4>
+    <input type="text" id="animalPicturePath" name="animalPicturePath" placeholder="Enter image URL" value="${(animal.animalPicturePath)!''}">
+    <h4>Description</h4>
+    <input type="text" id="description" name="description" rows="4" cols="50" placeholder="Enter a description..." value="${(animal.description)!''}"></textarea>
+    <br><br>
+    <input type="submit" value="Send">
+    </form>
     </div>
+<!--End Update Form-->
 </body>
 </html>
