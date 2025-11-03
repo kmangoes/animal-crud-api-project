@@ -51,6 +51,10 @@ public Object getAnimalsByName(@RequestParam String key, Model model) {
         return "redirect:/animals/";
     }
 }
+
+
+
+
 @GetMapping("/animals/createForm") 
 public Object showCreateForm(Model model) {
     System.out.println("Create form called :D"); //sanity check message in terminal
@@ -59,10 +63,11 @@ public Object showCreateForm(Model model) {
     System.out.println("Rendering template: animal-create.ftlh");
     return "animal-create"; //directs to animal-create.ftlh
 }
-@PostMapping({"/animals","/animals/"})
+@PostMapping("/animals")
 public Object addAnimal(Animal animal) {
     Animal savedAnimal = animalService.addAnimal(animal);
-    return "redirect:/animals/" + savedAnimal.getAnimalId();
+    System.out.println("Animal received: " + savedAnimal); //sanity check message in terminal 
+    return "redirect:/animals/";
 }
 
 
