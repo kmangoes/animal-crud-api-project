@@ -18,9 +18,8 @@
     <h1>${animal.name}</h1>
     <div class="animal-text-box">
         <img src="${animal.animalPicturePath}" alt="${animal.name}" width="600" height="400">
-        <h2> Description </h2>
-        <p> ${animal.description}</p>
         <ul class ="animal-facts">
+            <li>Description: ${animal.description}</li>
             <li>Age: ${animal.age}</li>
             <li>Breed: ${animal.classification}</li>
             <li>ID: ${animal.animalId}</li>
