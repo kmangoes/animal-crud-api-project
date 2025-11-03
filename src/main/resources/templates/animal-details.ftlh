@@ -12,7 +12,7 @@
 <!--Start Nav Bar-->
     <ul class = "navbar">
         <li><a href="/animals/">Home</a></li>
-        <li><a href="/animals/createForm/">New Animal Form</a></li>
+        <li><a href="/animals/createForm">New Animal Form</a></li>
     </ul>
 <!--End Nav Bar-->
     <h1>${animal.name}</h1>
