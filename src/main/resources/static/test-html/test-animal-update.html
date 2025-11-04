@@ -18,15 +18,15 @@
     <form action="/animals/update/${animal.animalId}" method="post">
     <h2>${title}</h2>
     <h4>Name</h4>
-    <input type="text" id="name" name="name" placeholder="Enter animal name" value="${(animal.name)!''}">
+    <input type="text" id="name" name="name" placeholder="Enter animal name" value="${(animal.name)!''}" required>
     <h4>Classification</h4>
-    <input type="text" id="classification" name="classification" placeholder="Enter animal breed" value="${(animal.classification)!''}">
+    <input type="text" id="classification" name="classification" placeholder="Enter animal breed" value="${(animal.classification)!''}" required>
     <h4>Age</h4>
-    <input type="number" id="age" name="age" value="${(animal.age)!''}">
+    <input type="number" id="age" name="age" value="${(animal.age)!''}" required>
     <h4>Image URL</h4>
-    <input type="text" id="animalPicturePath" name="animalPicturePath" placeholder="Enter image URL" value="${(animal.animalPicturePath)!''}">
+    <input type="text" id="animalPicturePath" name="animalPicturePath" placeholder="Enter image URL" value="${(animal.animalPicturePath)!''}" required>
     <h4>Description</h4>
-    <input type="text" id="description" name="description" rows="4" cols="50" placeholder="Enter a description..." value="${(animal.description)!''}"></textarea>
+    <input type="text" id="description" name="description" rows="4" cols="50" placeholder="Enter a description..." value="${(animal.description)!''}" required>
     <br><br>
     <input type="submit" value="Send">
     </form>

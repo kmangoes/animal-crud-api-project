@@ -16,20 +16,7 @@
     <h1>Welcome to the Animal Gallery!</h1>
     <h4>A collection of cute animals <br><br></h4>
 <!--End Nav Bar-->
-<div class="search-bar-container">
-    <!-- Search by name -->
-    <form onsubmit="event.preventDefault(); window.location='/animals/name/' + this.nameKey.value;">
-        <input type="text" name="nameKey" placeholder="Search by name..." required>
-        <button type="submit">Search</button>
-    </form>
 
-    <!-- Search by classification -->
-    <form onsubmit="event.preventDefault(); window.location='/animals/classification/' + this.classKey.value;">
-        <input type="text" name="classKey" placeholder="Search by classification..." required>
-        <button type="submit">Search</button>
-    </form>
-</div>
-<br><br>
 <!--Start Animals Cards-->
     <#list animalsList as animal> <!--loop through all animal rows in database-->
     <div class="animal-card">
